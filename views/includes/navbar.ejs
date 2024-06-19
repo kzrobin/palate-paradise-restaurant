@@ -1,0 +1,27 @@
+<nav class="nav">
+  <div class="home">
+    <a href="/home"
+      ><img src="/assets/logo.png" alt="Palate Paradise" class="logo-title"
+    /></a>
+  </div>
+  <div class="menuber-home">
+    <% if(currUser){%>
+    <div class="user-account">
+      <a href="/"><%= currUser.firstName %> <%= currUser.lastName %></a>
+    </div>
+    <div class="user-account">
+      <a href="/home/user/logout">Log Out</a>
+    </div>
+    <%} else{ %>
+      <div class="user-account">
+        <a href="/home/user/login">Log In</a>
+      </div>
+      <div class="user-account">
+        <a href="/home/user/signup">Sign Up</a>
+      </div>
+      <%}%>
+    <!-- <div class="user-cart">
+      <a href="/">Cart <i class="fa-solid fa-cart-shopping"></i></a>
+    </div> -->
+  </div>
+</nav>
