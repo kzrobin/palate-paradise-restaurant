@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: 'Arial Narrow Bold', sans-serif !important;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif,'Arial Narrow Bold', sans-serif !important;
 }
 body {
   display: flex;
@@ -24,6 +24,7 @@ a {
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 56px;
   padding: 0 1rem;
   background-color: #113826;
@@ -86,11 +87,34 @@ a {
 .user-cart {
   margin-left: 1rem;
 }
+
+/* search */
+.search-btn {
+  background-color: #fe424d !important;
+  border: #fe424d !important;
+  color: white !important;
+  border-radius: 1.75rem !important;
+  padding:  0.2rem 1rem!important;
+}
+.search-btn:hover {
+  background-color: #b60511 !important;
+  border: #b60511 !important;
+  color: white !important;
+}
+
+.search-btn i {
+  display: inline;
+  margin-right: 0.5rem !important;
+}
+
+.search-inp {
+  border-radius: 1.75rem !important;
+  padding:  0.2rem 1rem !important;
+}
+
 /* menu bar */
 
 .menu {
-  /* height: 3.5rem; */
-  /* width: 100%; */
   padding: 0 3rem;
   display: flex;
   flex-wrap: wrap;
@@ -137,6 +161,7 @@ footer {
 .f-info-socials i {
   font-size: 1.2rem;
   margin: 0.5rem 1.2rem;
+  display: none;
 }
 .f-info {
   height: 8rem;
@@ -227,4 +252,15 @@ footer {
   background-color: #4483e8;
   border:0 solid #4483e8;
 
+}
+
+/* index */
+.centered-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.centered-heading h1 {
+  padding: 1rem;
 }

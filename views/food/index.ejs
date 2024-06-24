@@ -1,12 +1,15 @@
 <% layout("/layouts/boilerplate") -%>
 <body>
-    <h1 style="padding: 0 1rem">All Items</h1>
+  <% if (allItems && allItems.length > 0){%>
+  <div class="centered-heading">
+    <h1>Experience Culinary Excellence</h1>
+  </div>
   <div
     class="row row-cols-lg-3 row-cols-md-2 row-cols-1"
     style="padding: 0 1rem"
   >
-    <%for(let item of allItems){%>
-    <a href="/home/<%=item._id%>">
+    <% for (let item of allItems) { %>
+    <a href="/item/<%=item._id%>">
       <div class="card col">
         <img
           src="<%=item.image.url%>"
@@ -23,6 +26,16 @@
         </div>
       </div>
     </a>
-    <%}%>
+    <% } %> <% } else { %>
+    <div class="d-flex justify-content-center" style="width: 100%">
+      <div
+        class="alert alert-danger col-6 mt-3"
+        role="alert"
+        style="text-align: center; width: fit-content; padding: 1rem"
+      >
+        Sorry! No items found.
+      </div>
+    </div>
+    <% } %>
   </div>
 </body>
