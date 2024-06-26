@@ -1,6 +1,22 @@
 * {
   box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif,'Arial Narrow Bold', sans-serif !important;
+  /* font-family: Cinzel, Georgia, Times, 'Times New Roman', serif,'Arial Narrow Bold', sans-serif; */
+}
+body {
+  font-family: 'Georgia', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Garamond', serif;
+}
+
+/* For a modern restaurant */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
 }
 body {
   display: flex;
@@ -62,7 +78,6 @@ a {
   font-weight: 400;
   font-size: 1rem;
 }
-
 .user-cart {
   width: fit-content;
   background-color: #e3dede;
@@ -148,7 +163,12 @@ footer {
   text-decoration: underline;
 }
 
-.f-info-socials,
+.f-info-socials{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 .brand-copyright,
 .f-info-links {
   width: 100%;
@@ -157,11 +177,10 @@ footer {
   text-align: center;
   vertical-align: middle;
 }
-
 .f-info-socials i {
   font-size: 1.2rem;
   margin: 0.5rem 1.2rem;
-  display: none;
+  /* display: none; */
 }
 .f-info {
   height: 8rem;
@@ -211,15 +230,12 @@ footer {
 .show-card-body {
   padding: 0 !important;
 }
-
-
 .show-delete-edit {
   display: flex;
 }
 .show-delete-edit div {
    margin-right: 1.5rem;
 }
-
 .delete-btn {
   background-color: #000000 !important;
   border: #000000 !important;
@@ -230,8 +246,10 @@ footer {
   border: #000000 !important;
   color: white !important;
 }
-
-
+/* review-card */
+.review-card {
+  border: 1px solid black !important;
+}
 .show-edit-option a {
   text-decoration: none;
   color: white;

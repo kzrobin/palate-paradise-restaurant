@@ -9,8 +9,9 @@ const flash = require("connect-flash")
 
 const User = require("./models/user.js");
 
-const foods = require("./routes/food.js");
-const user = require("./routes/user.js");
+const foodRoute = require("./routes/food.js");
+const userRoute = require("./routes/user.js");
+const reviewRoute = require("./routes/review.js")
 
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -67,9 +68,12 @@ app.use((req, res, next) => {
   next();
 });
 //user
-app.use("/user", user);
+app.use("/user", userRoute);
 //food router 
-app.use("/", foods);
+app.use("/", foodRoute);
+// review route
+app.use("/review", reviewRoute)
+
 
 //localhost
 const port = 8080;

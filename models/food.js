@@ -1,19 +1,19 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
+const Review = require("./review.js")
 
 const foodSchema = new Schema({
   title: {
     type: String,
-    require: true,
+    required: true,
   },
   price: {
     type: Number,
-    require: true,
+    required: true,
   },
   description: {
     type: String,
-    require: true,
+    required: true,
   },
   image: {
     url: {
@@ -24,12 +24,12 @@ const foodSchema = new Schema({
   },
   type: {
     type: String,
-    require: true,
+    required: true,
   },
   reviews: [
     {
       type: Schema.Types.ObjectId,
-      ref: "reviews"
+      ref: "Review"
     }
   ]
 

@@ -7,9 +7,14 @@ module.exports.index = async (req, res) => {
 
 module.exports.item = async (req, res) => {
   let { id } = req.params;
-  const item = await Food.findOne({ _id: id });
-  // console.log(item);
+  const item = await Food.findById(id).populate({
+    path: "reviews",
+    populate: ({
+      path: "author",
+    })
+  });
   res.render("./food/show.ejs", { item });
+  // res.send(item);
 }
 
 module.exports.type = async (req, res) => {
