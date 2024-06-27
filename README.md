@@ -22,16 +22,16 @@ Explore our website and discover the amazing dishes we offer: [Palate Paradise](
 ### Installation
 
 1. Clone the repository:
-   git clone https://github.com/kzrobin/palate-paradise-restaurant.git
+   git clone `https://github.com/kzrobin/palate-paradise-restaurant.git`
    cd palate-paradise
 2. Install dependencies:
    npm install
 3. Set up your environment variables:
    Create a .env file in the root directory and add your MongoDB URI and other secrets:
-        ATLUS_DB=your-mongodb-uri
-        SECRET=your-super-secret
+        `ATLUS_DB=your-mongodb-uri`
+        `SECRET=your-super-secret`
 4. Start the development server:
-        node app.js
+        `node app.js`
 5. Open your browser and visit `http://localhost:8080`
 
 ## 🤝 Contributing
