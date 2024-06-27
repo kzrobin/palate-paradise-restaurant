@@ -6,7 +6,7 @@ const userController = require("../controller/user.js");
 
 //user signUp
 router.get("/signup", userController.renderSignupForm)
-  .post("/signup",);
+  .post("/signup",userController.signup);
 //user login
 router.get("/login",userController.renderLoginForm)
   .post(

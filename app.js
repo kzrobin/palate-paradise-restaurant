@@ -1,7 +1,10 @@
+require("dotenv").config();
+
 const express = require("express");
 const session = require("express-session");
 const app = express();
 const mongoose = require("mongoose");
+const MongoStore = require("connect-mongo");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
@@ -24,8 +27,10 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 
 //database
+const atlasDB = process.env.ATLUS_DB;
+// const mongoDbUrl = "mongodb://127.0.0.1:27017/palateParadise";
 async function main() {
-  mongoose.connect("mongodb://127.0.0.1:27017/palateParadise");
+  mongoose.connect(atlasDB);
 };
 main()
   .then((result) => {
@@ -35,10 +40,19 @@ main()
     console.log(err);
   })
 
+// mongo-store
+const store = MongoStore.create({
+  mongoUrl:  process.env.ATLUS_DB,
+  touchAfter: 24 * 3600,
+  crypto: {
+      secret: process.env.SECRET
+    }
+});
 
 //session Options
 const sessionOptions = {
-  secret: "superKzRobin",
+  store: store,
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -67,13 +81,13 @@ app.use((req, res, next) => {
   res.locals.currUser = req.user;
   next();
 });
+
 //user
 app.use("/user", userRoute);
 //food router 
 app.use("/", foodRoute);
 // review route
 app.use("/review", reviewRoute)
-
 
 //localhost
 const port = 8080;

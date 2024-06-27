@@ -115,4 +115,4 @@ const fryData = [
         type: "fry"
     }
 ];
-module.exports = { data: pizza };
+module.exports = { data: fryData };

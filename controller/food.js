@@ -14,20 +14,16 @@ module.exports.item = async (req, res) => {
     })
   });
   res.render("./food/show.ejs", { item });
-  // res.send(item);
 }
 
 module.exports.type = async (req, res) => {
   let { type } = req.params;
   let allItems = await Food.find({ type: type })
-  // console.log(allItems);
   res.render("./food/items.ejs", { allItems, type });
 }
 
 module.exports.search = async (req, res) => {
   let searchString = req.query.q;
-
-  // searchString = console.log(searchString);
   let allItems = await Food.find({
     $or: [
       { title: { $regex: searchString, $options: "i" } },

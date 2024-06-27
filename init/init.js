@@ -1,11 +1,13 @@
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/food.js")
-
+require("dotenv").config();
 
 //database
+const atlasDB = process.env.ATLUS_DB;
+const mongoDbUrl = "mongodb://127.0.0.1:27017/palateParadise";
 async function  main() {
-    mongoose.connect("mongodb://127.0.0.1:27017/palateParadise");
+    mongoose.connect(atlasDB);
 }
 main()
     .then((result) => {
