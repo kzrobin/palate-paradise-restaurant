@@ -27,10 +27,10 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 
 //database
-const atlasDB = process.env.ATLUS_DB;
-// const mongoDbUrl = "mongodb://127.0.0.1:27017/palateParadise";
+// const atlasDB = process.env.ATLUS_DB;
+const mongoDbUrl = "mongodb://127.0.0.1:27017/palateParadise";
 async function main() {
-  mongoose.connect(atlasDB);
+  mongoose.connect(mongoDbUrl);
 };
 main()
   .then((result) => {
@@ -42,7 +42,7 @@ main()
 
 // mongo-store
 const store = MongoStore.create({
-  mongoUrl:  process.env.ATLUS_DB,
+  mongoUrl:  mongoDbUrl,
   touchAfter: 24 * 3600,
   crypto: {
       secret: process.env.SECRET
